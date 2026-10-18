@@ -3,10 +3,10 @@
   "active_subject": "Meteorology",
   "current": {
     "total": 887,
-    "verified": 367,
+    "verified": 373,
     "needs_review": 0,
     "unavailable": 0,
-    "pending": 520,
+    "pending": 514,
     "groups": [
       {
         "name": "Group 1 (2)",
@@ -59,7 +59,7 @@
       {
         "name": "Group 9 (2)",
         "total": 45,
-        "verified": 26,
+        "verified": 32,
         "needs_review": 0
       },
       {
@@ -137,7 +137,7 @@
       {
         "name": "30°N and 65°N",
         "total": 8,
-        "verified": 4,
+        "verified": 7,
         "needs_review": 0
       },
       {
@@ -172,19 +172,19 @@
       }
     ],
     "issue_question_ids": [],
-    "current_question": 5014,
+    "current_question": 1264,
     "current_module": null,
     "module_subtitle": "Meteorology",
-    "current_question_ordinal": 366,
-    "eta_seconds": 9776,
+    "current_question_ordinal": 375,
+    "eta_seconds": 9646,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
   "meteorology": {
     "total": 887,
-    "verified": 367,
+    "verified": 373,
     "needs_review": 0,
     "unavailable": 0,
-    "pending": 520,
+    "pending": 514,
     "groups": [
       {
         "name": "Group 1 (2)",
@@ -237,7 +237,7 @@
       {
         "name": "Group 9 (2)",
         "total": 45,
-        "verified": 26,
+        "verified": 32,
         "needs_review": 0
       },
       {
@@ -315,7 +315,7 @@
       {
         "name": "30°N and 65°N",
         "total": 8,
-        "verified": 4,
+        "verified": 7,
         "needs_review": 0
       },
       {
@@ -350,16 +350,16 @@
       }
     ],
     "issue_question_ids": [],
-    "current_question": 5014,
+    "current_question": 1264,
     "current_module": null,
     "module_subtitle": "Meteorology",
-    "current_question_ordinal": 366,
-    "eta_seconds": 9776,
+    "current_question_ordinal": 375,
+    "eta_seconds": 9646,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
   "overall": {
     "total": 8027,
-    "verified": 656
+    "verified": 662
   },
   "air_law": {
     "total": 292,
@@ -461,9 +461,9 @@
   },
   "collector": {
     "state": "running",
-    "stage": "verified",
-    "last_activity_utc": "2026-10-18T20:35:18Z",
-    "last_progress_utc": "2026-10-18T20:35:19Z"
+    "stage": "question_open",
+    "last_activity_utc": "2026-10-18T20:36:18Z",
+    "last_progress_utc": "2026-10-18T20:35:36Z"
   },
   "subjects": [
     {
@@ -541,10 +541,10 @@
     {
       "name": "Meteorology",
       "total": 887,
-      "verified": 367,
+      "verified": 373,
       "needs_review": 0,
       "unavailable": 0,
-      "pending": 520
+      "pending": 514
     },
     {
       "name": "Instruments",
@@ -571,5 +571,5 @@
       "pending": 1048
     }
   ],
-  "published_at": "2026-10-18T20:35:20Z"
+  "published_at": "2026-10-18T20:36:22Z"
 }
