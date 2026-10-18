@@ -1,8 +1,365 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "active_subject": "Meteorology",
+  "current": {
+    "total": 887,
+    "verified": 3,
+    "needs_review": 0,
+    "unavailable": 0,
+    "pending": 884,
+    "groups": [
+      {
+        "name": "Group 1 (2)",
+        "total": 45,
+        "verified": 3,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 2 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 3 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 4 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 5 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 6 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 7 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 8 (2)",
+        "total": 26,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 9 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 10 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 11 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 12 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 13 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 14 (2)",
+        "total": 21,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 15 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 16 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 17 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 18 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 19",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 20",
+        "total": 44,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 21",
+        "total": 34,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "30°N and 65°N",
+        "total": 8,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Wind",
+        "total": 20,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Clouds",
+        "total": 4,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Air masses",
+        "total": 27,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Hurricanes and Tornados",
+        "total": 12,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Time of day",
+        "total": 6,
+        "verified": 0,
+        "needs_review": 0
+      }
+    ],
+    "issue_question_ids": [],
+    "current_question": 65,
+    "current_module": null,
+    "module_subtitle": "Meteorology",
+    "current_question_ordinal": 5,
+    "eta_seconds": null,
+    "eta_description": "ETA will appear after the first few verified questions"
+  },
+  "meteorology": {
+    "total": 887,
+    "verified": 3,
+    "needs_review": 0,
+    "unavailable": 0,
+    "pending": 884,
+    "groups": [
+      {
+        "name": "Group 1 (2)",
+        "total": 45,
+        "verified": 3,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 2 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 3 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 4 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 5 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 6 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 7 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 8 (2)",
+        "total": 26,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 9 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 10 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 11 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 12 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 13 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 14 (2)",
+        "total": 21,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 15 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 16 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 17 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 18 (2)",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 19",
+        "total": 45,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 20",
+        "total": 44,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Group 21",
+        "total": 34,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "30°N and 65°N",
+        "total": 8,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Wind",
+        "total": 20,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Clouds",
+        "total": 4,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Air masses",
+        "total": 27,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Hurricanes and Tornados",
+        "total": 12,
+        "verified": 0,
+        "needs_review": 0
+      },
+      {
+        "name": "Time of day",
+        "total": 6,
+        "verified": 0,
+        "needs_review": 0
+      }
+    ],
+    "issue_question_ids": [],
+    "current_question": 65,
+    "current_module": null,
+    "module_subtitle": "Meteorology",
+    "current_question_ordinal": 5,
+    "eta_seconds": null,
+    "eta_description": "ETA will appear after the first few verified questions"
+  },
   "overall": {
     "total": 8027,
-    "verified": 289
+    "verified": 292
   },
   "air_law": {
     "total": 292,
@@ -96,11 +453,17 @@
     "eta_seconds": null,
     "eta_description": "The remaining IDs were omitted by the source; ETA unavailable"
   },
-  "collector": {
+  "air_law_collector": {
     "state": "review_needed",
     "stage": "awaiting_review",
     "last_activity_utc": "2026-10-18T18:08:58Z",
     "last_progress_utc": "2026-10-18T17:46:44Z"
+  },
+  "collector": {
+    "state": "running",
+    "stage": "question_open",
+    "last_activity_utc": "2026-10-18T18:38:57Z",
+    "last_progress_utc": "2026-10-18T18:38:38Z"
   },
   "subjects": [
     {
@@ -176,12 +539,12 @@
       "pending": 452
     },
     {
-      "name": "Metrology",
+      "name": "Meteorology",
       "total": 887,
-      "verified": 0,
+      "verified": 3,
       "needs_review": 0,
       "unavailable": 0,
-      "pending": 887
+      "pending": 884
     },
     {
       "name": "Instruments",
@@ -208,5 +571,5 @@
       "pending": 1048
     }
   ],
-  "published_at": "2026-10-18T18:37:21Z"
+  "published_at": "2026-10-18T18:39:10Z"
 }
