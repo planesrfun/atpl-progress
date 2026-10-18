@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a29">
+  <meta name="description" content="Live, read-only progress for the ATPL offline revision collection.">
+  <title>ATPL • Collection Monitor</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0a111c;--panel:#121e2c;--panel2:#182737;--line:#293849;--ink:#ebf6f5;--muted:#9bb0bc;--soft:#758c9b;--accent:#57d9b1;--accent-dark:#246b60;--gold:#efc27d;--red:#ef947f;--radius:16px}
+    *,*:before,*:after{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:radial-gradient(ellipse 90% 45% at 90% -13%,#173c43 0,transparent 66%),radial-gradient(ellipse 65% 35% at -20% 30%,#12233b 0,transparent 80%),var(--bg);font:15px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
+    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+    button{font:inherit}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto;padding-bottom:58px}
+    header{padding:32px 0 27px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:13px}
+    .logo{display:grid;place-items:center;width:45px;height:45px;border:1px solid #397466;border-radius:12px;background:linear-gradient(145deg,#22594f,#1a2e3e);font-weight:800;color:#b7fce6;letter-spacing:-1px}
+    .brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:1.5px;font-weight:700;text-transform:uppercase}
+    .brand strong{display:block;font-size:19px;letter-spacing:-.3px}
+    .headright{display:flex;align-items:center;gap:13px}
+    .live{display:flex;gap:8px;align-items:center;color:#b1bfca;font-size:12px}
+    .led{height:8px;width:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 13px #57d9b18c}
+    .led.warn{background:var(--gold);box-shadow:0 0 13px #efc27d80}
+    .led.bad{background:var(--red);box-shadow:0 0 13px #ef947f70}
+    .refresh{border:1px solid var(--line);border-radius:10px;background:#152536;color:var(--ink);cursor:pointer;padding:8px 13px}
+    .refresh:hover{border-color:#447665}
+    .eyebrow{text-transform:uppercase;color:var(--accent);font-size:12px;font-weight:700;letter-spacing:1.8px}
+    .title-row{display:flex;gap:15px;justify-content:space-between;align-items:flex-start;margin:12px 0 22px;flex-wrap:wrap}
+    h1,h2,h3,p{margin-top:0}h1{font-size:clamp(28px,4.8vw,43px);line-height:1.15;margin-bottom:9px;letter-spacing:-1.5px}h2{font-size:18px;letter-spacing:-.4px;margin:0}h3{font-size:15px;margin:0}
+    .subtitle{color:var(--muted);margin:0;max-width:620px}
+    .pill{display:inline-flex;align-items:center;gap:7px;border-radius:100px;border:1px solid #4b5f5d;padding:7px 12px;font-size:12px;color:#aef1d7;background:#19322f}
+    .pill.warn{color:#ffe0aa;background:#362f25;border-color:#6e593f}
+    .pill.bad{color:#ffbbab;background:#352728;border-color:#734a46}
+    .card{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(150deg,#152332,#111c29);box-shadow:0 15px 44px #00000012}
+    .hero{padding:27px 30px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(225px,.8fr);gap:32px}
+    .muted{color:var(--muted)}.tiny{font-size:12px}.overline{font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);font-weight:700}
+    .counter{display:flex;align-items:baseline;gap:12px;margin:12px 0 8px}
+    .counter .n{font-size:clamp(38px,7vw,61px);line-height:1.1;letter-spacing:-2.5px;font-weight:750;font-variant-numeric:tabular-nums}
+    .counter .total{font-size:19px;color:var(--muted);font-variant-numeric:tabular-nums}
+    .track{height:11px;background:#253647;border-radius:100px;overflow:hidden;display:block}
+    .track>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2aa17f,#68e2bd);border-radius:100px;transition:width .7s ease}
+    .progress-meta{display:flex;align-items:center;justify-content:space-between;margin-top:11px;color:var(--muted);font-size:12px}
+    .progress-meta strong{color:var(--accent)}
+    .hero-side{padding:6px 0 4px 29px;border-left:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
+    .eta{font-size:27px;font-weight:700;letter-spacing:-.8px;margin:8px 0 6px;line-height:1.2}
+    .eta-hint{font-size:12px;color:var(--muted);line-height:1.5}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+    .stat{padding:19px 20px}.stat .value{font-size:25px;line-height:1.25;font-weight:700;margin:8px 0 3px;overflow-wrap:anywhere}.stat .secondary{color:var(--muted);font-size:12px}
+    .stat .value.small{font-size:20px}
+    .stat .value.issue{color:var(--gold)}
+    .body-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.8fr);gap:16px;margin-top:23px}
+    .section{padding:23px 25px}
+    .section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
+    .section-subtitle{color:var(--muted);font-size:12px}
+    .module{margin-bottom:18px}
+    .module:last-child{margin-bottom:0}
+    .module-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:13px;margin-bottom:8px}
+    .module-top .count{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .module-track{height:6px;background:#243443;border-radius:20px;overflow:hidden}
+    .module-track>i{display:block;height:100%;background:#54bca1;border-radius:20px}
+    .module.flagged .module-track>i{background:var(--gold)}
+    .issue-list{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 0}
+    .issue-chip{color:#ffdcaa;border:1px solid #64523b;background:#2c2926;border-radius:8px;padding:4px 9px;font-variant-numeric:tabular-nums;font-size:12px}
+    .explanation{font-size:13px;color:var(--muted);line-height:1.7}
+    .detail{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}
+    .detail:last-child{border-bottom:0}
+    .detail label{color:var(--muted)}
+    .detail strong{font-weight:650;text-align:right}
+    .menu{display:flex;gap:5px;background:#101a28;border:1px solid var(--line);padding:4px;border-radius:11px}
+    .tab{border:0;border-radius:8px;padding:8px 13px;background:transparent;color:var(--muted);font-size:12px;cursor:pointer}
+    .tab.active{background:#244239;color:#cbfce8}
+    #subjects-panel{display:none}
+    .subject-list{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+    .subject{background:#142433;border:1px solid var(--line);border-radius:12px;padding:14px}
+    .subject h3{font-size:13px;margin-bottom:7px}
+    .subject-meta{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;margin-top:6px}
+    .subject .module-track{height:5px}
+    footer{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:23px;font-size:12px;color:var(--soft);flex-wrap:wrap}
+    #update{font-variant-numeric:tabular-nums}
+    .spinner{display:inline-block;width:12px;height:12px;border:2px solid #7b938d;border-right-color:transparent;border-radius:50%;animation:spin .8s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .empty{color:var(--muted);padding:20px}
+    @media(max-width:750px){.wrap{width:min(100% - 28px,1100px)}header{padding:20px 0 19px}.headright{gap:7px}.live{display:none}.hero{grid-template-columns:1fr;gap:18px;padding:23px}.hero-side{border-left:0;border-top:1px solid var(--line);padding:19px 0 0}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.body-grid{grid-template-columns:1fr}.section{padding:20px}.stat{padding:17px}.brand strong{font-size:17px}}
+    @media(max-width:440px){.stats{gap:9px}.stat .value{font-size:21px}.stat .value.small{font-size:17px}.counter .n{font-size:40px}.section-head{align-items:flex-start;flex-direction:column}.subject-list{grid-template-columns:1fr}.logo{width:41px;height:41px}.refresh{padding:8px 10px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><div class="logo" aria-hidden="true">AT</div><div><small>Read-only dashboard</small><strong>ATPL Collection Monitor</strong></div></div>
+    <div class="headright"><div class="live"><span class="led" id="led"></span><span id="connection">Connecting…</span></div><button class="refresh" id="refresh" type="button" aria-label="Refresh progress now">↻ Refresh</button></div>
+  </header>
+  <main>
+    <div class="eyebrow">Question bank / Air Law</div>
+    <div class="title-row">
+      <div><h1>Collection progress</h1><p class="subtitle">A live, read-only view of the question IDs being processed, their modules and the estimated time remaining.</p></div>
+      <span class="pill" id="state-pill"><span class="spinner"></span> Loading progress</span>
+    </div>
+    <section class="card hero" aria-label="Air Law progress">
+      <div>
+        <div class="overline">Air Law verified questions</div>
+        <div class="counter"><span class="n" id="done">—</span><span class="total" id="outof">/ 292</span></div>
+        <div class="track" role="progressbar" aria-label="Air Law collection completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="main-track"><i id="main-progress"></i></div>
+        <div class="progress-meta"><span id="pct"><strong>—%</strong> verified</span><span id="remaining">— remaining</span></div>
+      </div>
+      <div class="hero-side">
+        <div class="overline">Estimated time remaining</div>
+        <div class="eta" id="eta">Calculating…</div>
+        <div class="eta-hint" id="eta-hint">Based on the latest verified collection rate</div>
+      </div>
+    </section>
+    <div class="stats">
+      <section class="card stat"><div class="overline">Current module</div><div class="value small" id="module">—</div><div class="secondary" id="module-sub">Awaiting live data</div></section>
+      <section class="card stat"><div class="overline">Current question</div><div class="value" id="current-question">—</div><div class="secondary" id="question-sub">Awaiting live data</div></section>
+      <section class="card stat"><div class="overline">Needs review</div><div class="value issue" id="issues">—</div><div class="secondary">Question IDs not served by source</div></section>
+    </div>
+    <div class="body-grid">
+      <section class="card section">
+        <div class="section-head">
+          <div><h2>Module breakdown</h2><div class="section-subtitle">Original workbook group order</div></div>
+          <div class="menu" role="tablist" aria-label="Progress display"><button class="tab active" id="tab-modules" role="tab" aria-selected="true">Air Law groups</button><button class="tab" id="tab-subjects" role="tab" aria-selected="false">All subjects</button></div>
+        </div>
+        <div id="modules-panel" role="tabpanel"><div class="empty">Loading modules…</div></div>
+        <div id="subjects-panel" role="tabpanel"><div class="subject-list" id="subjects-list"></div><p class="section-subtitle" style="margin-top:14px">Other subjects are tracked but are not included in the current Air Law collection run.</p></div>
+      </section>
+      <aside class="card section">
+        <div class="section-head"><div><h2>Collection activity</h2><div class="section-subtitle">Latest collector checkpoint</div></div></div>
+        <div class="detail"><label>Status</label><strong id="collector-status">—</strong></div>
+        <div class="detail"><label>Last activity</label><strong id="last-activity">—</strong></div>
+        <div class="detail"><label>Current subject</label><strong id="current-subject">Air Law</strong></div>
+        <div class="detail"><label>Whole bank</label><strong id="whole-bank">—</strong></div>
+        <div id="issue-box" style="display:none;margin-top:19px"><h3 style="color:var(--gold)">Questions to investigate</h3><div class="issue-list" id="issue-ids"></div><p class="explanation" id="issue-info" style="margin:12px 0 0">The source site omitted these IDs. They are not marked verified.</p></div>
+        <p class="explanation" style="margin:22px 0 0">This dashboard contains question numbers and collection status only. No question text, answers, explanations or account details are shared.</p>
+      </aside>
+    </div>
+  </main>
+  <footer><span>Last published: <span id="update">Waiting for data…</span> · Checks for updates every 30 seconds</span><span>Powered by <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> · <a href="https://github.com/planesrfun/atpl-progress" target="_blank" rel="noopener">Public dashboard source</a></span></footer>
+</div>
+<script>
+(function(){
+  'use strict';
+  const el=id=>document.getElementById(id);
+  let latest=null;
+  const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const count=n=>Number(n||0).toLocaleString('en-GB');
+  const percent=(a,b)=>b?Math.min(100,Math.round(a/b*1000)/10):0;
+  const formatTime=iso=>{if(!iso)return 'Not available';const d=new Date(iso);return isNaN(d)?'Not available':d.toLocaleString(undefined,{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZoneName:'short'});};
+  const since=iso=>{if(!iso)return 'Not available';const ms=Date.now()-new Date(iso).getTime();if(!Number.isFinite(ms))return 'Not available';const m=Math.max(0,Math.round(ms/60000));return m<1?'Just now':m===1?'1 minute ago':m<60?m+' minutes ago':Math.floor(m/60)+' hours ago';};
+  const niceEta=seconds=>{const m=Math.ceil(Number(seconds)/60);if(!Number.isFinite(m)||m<0)return 'Not available';if(m<2)return 'Under 2 min';if(m<60)return '~'+m+' min';return '~'+Math.floor(m/60)+'h '+(m%60)+'m';};
+  function paint(d){
+    latest=d;
+    const a=d.air_law||{}, total=a.total||292, verified=a.verified||0, review=a.needs_review||0, pending=a.pending||0;
+    const percentage=percent(verified,total);
+    el('done').textContent=count(verified);
+    el('outof').textContent='/ '+count(total);
+    el('pct').innerHTML='<strong>'+percentage+'%</strong> verified';
+    el('remaining').textContent=count(total-verified)+' unresolved';
+    el('main-progress').style.width=percentage+'%';
+    el('main-track').setAttribute('aria-valuenow',String(percentage));
+    el('issues').textContent=count(review);
+    el('module').textContent=a.current_module|| (review && !pending?'Review queue':'—');
+    el('module-sub').textContent=a.current_module?(a.module_subtitle||'Air Law module'):(review && !pending?'Source verification required':'No active module');
+    el('current-question').textContent=a.current_question?'#'+a.current_question:'—';
+    el('question-sub').textContent=a.current_question?(a.current_question_ordinal?'Question '+a.current_question_ordinal+' of '+total:'Currently displayed'):(review?'Next unresolved: #'+(a.issue_question_ids||[])[0]:'No active question');
+    el('eta').textContent=a.eta_seconds!=null?niceEta(a.eta_seconds):(review && !pending?'Awaiting review':pending?'Not available':'Complete');
+    el('eta-hint').textContent=a.eta_description||(review?'Awaiting source availability for flagged IDs':'Based on recent collection speed');
+    const st=d.collector||{}, state=st.state||'unknown';
+    const statusText={running:'Collecting',review_needed:'Review needed',finished:'Complete',stalled:'Connection stalled',idle:'Not running',error:'Attention needed'}[state]||'Unknown';
+    el('collector-status').textContent=statusText;
+    el('last-activity').textContent=since(st.last_activity_utc);
+    el('whole-bank').textContent=count(d.overall?.verified)+' / '+count(d.overall?.total);
+    el('update').textContent=formatTime(d.published_at);
+    const pill=el('state-pill'); pill.textContent=statusText; pill.className='pill'+(['review_needed','stalled'].includes(state)?' warn':state==='error'?' bad':'');
+    const led=el('led');led.className='led'+(['review_needed','stalled'].includes(state)?' warn':state==='error'?' bad':'');
+    el('connection').textContent='Updates available';
+    const groups=(a.groups||[]).filter(g=>g.name&&/^Group \d+$/i.test(g.name));
+    el('modules-panel').innerHTML=groups.length?groups.map(g=>{
+      const p=percent(g.verified,g.total);
+      return '<div class="module'+(g.needs_review?' flagged':'')+'"><div class="module-top"><span>'+esc(g.name)+(g.needs_review?' <span style="color:var(--gold)">· '+g.needs_review+' flagged</span>':'')+'</span><span class="count">'+count(g.verified)+' / '+count(g.total)+'</span></div><div class="module-track"><i style="width:'+p+'%"></i></div></div>';
+    }).join(''):'<div class="empty">No module information yet.</div>';
+    el('subjects-list').innerHTML=(d.subjects||[]).map(s=>'<div class="subject"><h3>'+esc(s.name)+'</h3><div class="module-track"><i style="width:'+percent(s.verified,s.total)+'%"></i></div><div class="subject-meta"><span>'+count(s.verified)+' / '+count(s.total)+'</span><span>'+percent(s.verified,s.total)+'%</span></div></div>').join('');
+    const ids=a.issue_question_ids||[];
+    el('issue-box').style.display=ids.length?'block':'none';
+    el('issue-ids').innerHTML=ids.map(id=>'<span class="issue-chip">#'+esc(id)+'</span>').join('');
+    el('issue-info').textContent='These IDs were not returned by ATPL Online. They remain unverified; the automated collector will not repeatedly retry them.';
+  }
+  async function refresh(){
+    const b=el('refresh'); b.disabled=true;b.textContent='↻ Updating…';
+    try{
+      const rsp=await fetch('./status.json?ts='+Date.now(),{cache:'no-store'});
+      if(!rsp.ok)throw Error('status '+rsp.status);
+      const data=await rsp.json();
+      if(!data.air_law||!data.collector)throw Error('invalid status data');
+      paint(data);
+    }catch(err){
+      el('connection').textContent='Update delayed';
+      el('led').className='led bad';
+      if(!latest)el('state-pill').textContent='Waiting for first published update';
+    }finally{b.disabled=false;b.textContent='↻ Refresh';}
+  }
+  el('refresh').addEventListener('click',refresh);
+  for(const [tab,panel,other,otherPanel] of [['tab-modules','modules-panel','tab-subjects','subjects-panel'],['tab-subjects','subjects-panel','tab-modules','modules-panel']]){
+    el(tab).addEventListener('click',()=>{
+      el(panel).style.display='block';el(otherPanel).style.display='none';
+      el(tab).classList.add('active');el(other).classList.remove('active');
+      el(tab).setAttribute('aria-selected','true');el(other).setAttribute('aria-selected','false');
+    });
+  }
+  refresh();
+  setInterval(refresh,30000);
+  setInterval(()=>{if(latest){el('last-activity').textContent=since(latest.collector?.last_activity_utc);}},15000);
+})();
+</script>
+</body>
+</html>
