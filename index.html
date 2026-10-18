@@ -92,16 +92,16 @@
     <div class="headright"><div class="live"><span class="led" id="led"></span><span id="connection">Connecting…</span></div><button class="refresh" id="refresh" type="button" aria-label="Refresh progress now">↻ Refresh</button></div>
   </header>
   <main>
-    <div class="eyebrow">Question bank / Air Law</div>
+    <div class="eyebrow" id="subject-heading">Question bank / Meteorology</div>
     <div class="title-row">
       <div><h1>Collection progress</h1><p class="subtitle">A live, read-only view of the question IDs being processed, their modules and the estimated time remaining.</p></div>
       <span class="pill" id="state-pill"><span class="spinner"></span> Loading progress</span>
     </div>
     <section class="card hero" aria-label="Air Law progress">
       <div>
-        <div class="overline">Air Law verified questions</div>
-        <div class="counter"><span class="n" id="done">—</span><span class="total" id="outof">/ 292</span></div>
-        <div class="track" role="progressbar" aria-label="Air Law collection completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="main-track"><i id="main-progress"></i></div>
+        <div class="overline" id="verified-label">Meteorology verified questions</div>
+        <div class="counter"><span class="n" id="done">—</span><span class="total" id="outof">/ 887</span></div>
+        <div class="track" role="progressbar" aria-label="Current subject collection completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="main-track"><i id="main-progress"></i></div>
         <div class="progress-meta"><span id="pct"><strong>—%</strong> verified</span><span id="remaining">— remaining</span></div>
       </div>
       <div class="hero-side">
@@ -119,16 +119,16 @@
       <section class="card section">
         <div class="section-head">
           <div><h2>Module breakdown</h2><div class="section-subtitle">Original workbook group order</div></div>
-          <div class="menu" role="tablist" aria-label="Progress display"><button class="tab active" id="tab-modules" role="tab" aria-selected="true">Air Law groups</button><button class="tab" id="tab-subjects" role="tab" aria-selected="false">All subjects</button></div>
+          <div class="menu" role="tablist" aria-label="Progress display"><button class="tab active" id="tab-modules" role="tab" aria-selected="true">Subject groups</button><button class="tab" id="tab-subjects" role="tab" aria-selected="false">All subjects</button></div>
         </div>
         <div id="modules-panel" role="tabpanel"><div class="empty">Loading modules…</div></div>
-        <div id="subjects-panel" role="tabpanel"><div class="subject-list" id="subjects-list"></div><p class="section-subtitle" style="margin-top:14px">Other subjects are tracked but are not included in the current Air Law collection run.</p></div>
+        <div id="subjects-panel" role="tabpanel"><div class="subject-list" id="subjects-list"></div><p class="section-subtitle" style="margin-top:14px">Other subjects are tracked but are not included in the currently active collection run.</p></div>
       </section>
       <aside class="card section">
         <div class="section-head"><div><h2>Collection activity</h2><div class="section-subtitle">Latest collector checkpoint</div></div></div>
         <div class="detail"><label>Status</label><strong id="collector-status">—</strong></div>
         <div class="detail"><label>Last activity</label><strong id="last-activity">—</strong></div>
-        <div class="detail"><label>Current subject</label><strong id="current-subject">Air Law</strong></div>
+        <div class="detail"><label>Current subject</label><strong id="current-subject">Meteorology</strong></div>
         <div class="detail"><label>Whole bank</label><strong id="whole-bank">—</strong></div>
         <div id="issue-box" style="display:none;margin-top:19px"><h3 style="color:var(--gold)">Questions to investigate</h3><div class="issue-list" id="issue-ids"></div><p class="explanation" id="issue-info" style="margin:12px 0 0">The source site omitted these IDs. They are not marked verified.</p></div>
         <p class="explanation" style="margin:22px 0 0">This dashboard contains question numbers and collection status only. No question text, answers, explanations or account details are shared.</p>
@@ -150,7 +150,11 @@
   const niceEta=seconds=>{const m=Math.ceil(Number(seconds)/60);if(!Number.isFinite(m)||m<0)return 'Not available';if(m<2)return 'Under 2 min';if(m<60)return '~'+m+' min';return '~'+Math.floor(m/60)+'h '+(m%60)+'m';};
   function paint(d){
     latest=d;
-    const a=d.air_law||{}, total=a.total||292, verified=a.verified||0, review=a.needs_review||0, pending=a.pending||0;
+    const activeName=d.active_subject||'Air Law';
+    el('subject-heading').textContent='Question bank / '+activeName;
+    el('verified-label').textContent=activeName+' verified questions';
+    el('current-subject').textContent=activeName;
+    const a=d.current||d.meteorology||d.air_law||{}, total=a.total||887, verified=a.verified||0, review=a.needs_review||0, pending=a.pending||0;
     const percentage=percent(verified,total);
     el('done').textContent=count(verified);
     el('outof').textContent='/ '+count(total);
@@ -191,7 +195,7 @@
       const rsp=await fetch('./status.json?ts='+Date.now(),{cache:'no-store'});
       if(!rsp.ok)throw Error('status '+rsp.status);
       const data=await rsp.json();
-      if(!data.air_law||!data.collector)throw Error('invalid status data');
+      if(!(data.current||data.air_law)||!data.collector)throw Error('invalid status data');
       paint(data);
     }catch(err){
       el('connection').textContent='Update delayed';
