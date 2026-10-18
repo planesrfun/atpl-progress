@@ -3,10 +3,10 @@
   "active_subject": "Meteorology",
   "current": {
     "total": 887,
-    "verified": 333,
+    "verified": 340,
     "needs_review": 0,
     "unavailable": 0,
-    "pending": 554,
+    "pending": 547,
     "groups": [
       {
         "name": "Group 1 (2)",
@@ -53,7 +53,7 @@
       {
         "name": "Group 8 (2)",
         "total": 26,
-        "verified": 18,
+        "verified": 25,
         "needs_review": 0
       },
       {
@@ -176,15 +176,15 @@
     "current_module": null,
     "module_subtitle": "Meteorology",
     "current_question_ordinal": 340,
-    "eta_seconds": 10452,
+    "eta_seconds": 10192,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
   "meteorology": {
     "total": 887,
-    "verified": 333,
+    "verified": 340,
     "needs_review": 0,
     "unavailable": 0,
-    "pending": 554,
+    "pending": 547,
     "groups": [
       {
         "name": "Group 1 (2)",
@@ -231,7 +231,7 @@
       {
         "name": "Group 8 (2)",
         "total": 26,
-        "verified": 18,
+        "verified": 25,
         "needs_review": 0
       },
       {
@@ -354,12 +354,12 @@
     "current_module": null,
     "module_subtitle": "Meteorology",
     "current_question_ordinal": 340,
-    "eta_seconds": 10452,
+    "eta_seconds": 10192,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
   "overall": {
     "total": 8027,
-    "verified": 622
+    "verified": 629
   },
   "air_law": {
     "total": 292,
@@ -461,9 +461,9 @@
   },
   "collector": {
     "state": "running",
-    "stage": "question_open",
-    "last_activity_utc": "2026-10-18T20:24:51Z",
-    "last_progress_utc": "2026-10-18T20:23:08Z"
+    "stage": "verified",
+    "last_activity_utc": "2026-10-18T20:26:06Z",
+    "last_progress_utc": "2026-10-18T20:26:04Z"
   },
   "subjects": [
     {
@@ -541,10 +541,10 @@
     {
       "name": "Meteorology",
       "total": 887,
-      "verified": 333,
+      "verified": 340,
       "needs_review": 0,
       "unavailable": 0,
-      "pending": 554
+      "pending": 547
     },
     {
       "name": "Instruments",
@@ -571,5 +571,5 @@
       "pending": 1048
     }
   ],
-  "published_at": "2026-10-18T20:25:04Z"
+  "published_at": "2026-10-18T20:26:06Z"
 }
