@@ -172,10 +172,10 @@
       }
     ],
     "issue_question_ids": [],
-    "current_question": null,
+    "current_question": 1783,
     "current_module": null,
     "module_subtitle": "Meteorology",
-    "current_question_ordinal": null,
+    "current_question_ordinal": 16,
     "eta_seconds": 11799,
     "eta_description": "Estimated from the latest 13 verified questions; flagged IDs excluded"
   },
@@ -350,10 +350,10 @@
       }
     ],
     "issue_question_ids": [],
-    "current_question": null,
+    "current_question": 1783,
     "current_module": null,
     "module_subtitle": "Meteorology",
-    "current_question_ordinal": null,
+    "current_question_ordinal": 16,
     "eta_seconds": 11799,
     "eta_description": "Estimated from the latest 13 verified questions; flagged IDs excluded"
   },
@@ -461,8 +461,8 @@
   },
   "collector": {
     "state": "running",
-    "stage": "batch_complete",
-    "last_activity_utc": "2026-10-18T18:41:16Z",
+    "stage": "question_open",
+    "last_activity_utc": "2026-10-18T18:42:14Z",
     "last_progress_utc": "2026-10-18T18:41:14Z"
   },
   "subjects": [
@@ -571,5 +571,5 @@
       "pending": 1048
     }
   ],
-  "published_at": "2026-10-18T18:41:25Z"
+  "published_at": "2026-10-18T18:42:27Z"
 }
