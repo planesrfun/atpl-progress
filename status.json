@@ -3,10 +3,10 @@
   "active_subject": "Meteorology",
   "current": {
     "total": 887,
-    "verified": 83,
+    "verified": 93,
     "needs_review": 0,
     "unavailable": 0,
-    "pending": 804,
+    "pending": 794,
     "groups": [
       {
         "name": "Group 1 (2)",
@@ -17,13 +17,13 @@
       {
         "name": "Group 2 (2)",
         "total": 45,
-        "verified": 38,
+        "verified": 45,
         "needs_review": 0
       },
       {
         "name": "Group 3 (2)",
         "total": 45,
-        "verified": 0,
+        "verified": 3,
         "needs_review": 0
       },
       {
@@ -172,19 +172,19 @@
       }
     ],
     "issue_question_ids": [],
-    "current_question": 1550,
+    "current_question": null,
     "current_module": null,
     "module_subtitle": "Meteorology",
-    "current_question_ordinal": 93,
-    "eta_seconds": 15222,
+    "current_question_ordinal": null,
+    "eta_seconds": 18474,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
   "meteorology": {
     "total": 887,
-    "verified": 83,
+    "verified": 93,
     "needs_review": 0,
     "unavailable": 0,
-    "pending": 804,
+    "pending": 794,
     "groups": [
       {
         "name": "Group 1 (2)",
@@ -195,13 +195,13 @@
       {
         "name": "Group 2 (2)",
         "total": 45,
-        "verified": 38,
+        "verified": 45,
         "needs_review": 0
       },
       {
         "name": "Group 3 (2)",
         "total": 45,
-        "verified": 0,
+        "verified": 3,
         "needs_review": 0
       },
       {
@@ -350,16 +350,16 @@
       }
     ],
     "issue_question_ids": [],
-    "current_question": 1550,
+    "current_question": null,
     "current_module": null,
     "module_subtitle": "Meteorology",
-    "current_question_ordinal": 93,
-    "eta_seconds": 15222,
+    "current_question_ordinal": null,
+    "eta_seconds": 18474,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
   "overall": {
     "total": 8027,
-    "verified": 372
+    "verified": 382
   },
   "air_law": {
     "total": 292,
@@ -461,9 +461,9 @@
   },
   "collector": {
     "state": "running",
-    "stage": "question_open",
-    "last_activity_utc": "2026-10-18T19:07:59Z",
-    "last_progress_utc": "2026-10-18T19:03:13Z"
+    "stage": "batch_complete",
+    "last_activity_utc": "2026-10-18T19:08:39Z",
+    "last_progress_utc": "2026-10-18T19:08:37Z"
   },
   "subjects": [
     {
@@ -541,10 +541,10 @@
     {
       "name": "Meteorology",
       "total": 887,
-      "verified": 83,
+      "verified": 93,
       "needs_review": 0,
       "unavailable": 0,
-      "pending": 804
+      "pending": 794
     },
     {
       "name": "Instruments",
@@ -571,5 +571,5 @@
       "pending": 1048
     }
   ],
-  "published_at": "2026-10-18T19:08:06Z"
+  "published_at": "2026-10-18T19:09:08Z"
 }
