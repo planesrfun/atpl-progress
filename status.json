@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "overall": {
-    "total": 8680,
+    "total": 8027,
     "verified": 289
   },
   "air_law": {
@@ -177,11 +177,11 @@
     },
     {
       "name": "Metrology",
-      "total": 1540,
+      "total": 887,
       "verified": 0,
       "needs_review": 0,
       "unavailable": 0,
-      "pending": 1540
+      "pending": 887
     },
     {
       "name": "Instruments",
@@ -208,5 +208,5 @@
       "pending": 1048
     }
   ],
-  "published_at": "2026-10-18T18:08:58Z"
+  "published_at": "2026-10-18T18:37:21Z"
 }
