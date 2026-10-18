@@ -3,10 +3,10 @@
   "active_subject": "Meteorology",
   "current": {
     "total": 887,
-    "verified": 453,
+    "verified": 463,
     "needs_review": 0,
     "unavailable": 0,
-    "pending": 434,
+    "pending": 424,
     "groups": [
       {
         "name": "Group 1 (2)",
@@ -71,7 +71,7 @@
       {
         "name": "Group 11 (2)",
         "total": 45,
-        "verified": 22,
+        "verified": 32,
         "needs_review": 0
       },
       {
@@ -172,19 +172,19 @@
       }
     ],
     "issue_question_ids": [],
-    "current_question": 1779,
+    "current_question": null,
     "current_module": null,
     "module_subtitle": "Meteorology",
-    "current_question_ordinal": 462,
-    "eta_seconds": 7740,
+    "current_question_ordinal": null,
+    "eta_seconds": 7844,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
   "meteorology": {
     "total": 887,
-    "verified": 453,
+    "verified": 463,
     "needs_review": 0,
     "unavailable": 0,
-    "pending": 434,
+    "pending": 424,
     "groups": [
       {
         "name": "Group 1 (2)",
@@ -249,7 +249,7 @@
       {
         "name": "Group 11 (2)",
         "total": 45,
-        "verified": 22,
+        "verified": 32,
         "needs_review": 0
       },
       {
@@ -350,16 +350,16 @@
       }
     ],
     "issue_question_ids": [],
-    "current_question": 1779,
+    "current_question": null,
     "current_module": null,
     "module_subtitle": "Meteorology",
-    "current_question_ordinal": 462,
-    "eta_seconds": 7740,
+    "current_question_ordinal": null,
+    "eta_seconds": 7844,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
   "overall": {
     "total": 8027,
-    "verified": 742
+    "verified": 752
   },
   "air_law": {
     "total": 292,
@@ -461,9 +461,9 @@
   },
   "collector": {
     "state": "running",
-    "stage": "question_open",
-    "last_activity_utc": "2026-10-18T21:01:54Z",
-    "last_progress_utc": "2026-10-18T20:59:33Z"
+    "stage": "batch_complete",
+    "last_activity_utc": "2026-10-18T21:02:53Z",
+    "last_progress_utc": "2026-10-18T21:02:51Z"
   },
   "subjects": [
     {
@@ -541,10 +541,10 @@
     {
       "name": "Meteorology",
       "total": 887,
-      "verified": 453,
+      "verified": 463,
       "needs_review": 0,
       "unavailable": 0,
-      "pending": 434
+      "pending": 424
     },
     {
       "name": "Instruments",
@@ -571,5 +571,5 @@
       "pending": 1048
     }
   ],
-  "published_at": "2026-10-18T21:02:00Z"
+  "published_at": "2026-10-18T21:03:02Z"
 }
