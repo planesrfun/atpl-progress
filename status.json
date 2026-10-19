@@ -365,7 +365,7 @@
   },
   "overall": {
     "total": 7375,
-    "verified": 1174
+    "verified": 1177
   },
   "air_law": {
     "total": 292,
@@ -571,11 +571,11 @@
     {
       "name": "OPS",
       "total": 396,
-      "verified": 0,
+      "verified": 3,
       "needs_review": 0,
       "unavailable": 0,
-      "pending": 396
+      "pending": 393
     }
   ],
-  "published_at": "2026-10-19T02:06:31Z"
+  "published_at": "2026-10-19T02:09:33Z"
 }
