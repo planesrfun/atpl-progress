@@ -3,15 +3,15 @@
   "active_subject": "Operational Procedures",
   "current": {
     "total": 396,
-    "verified": 13,
+    "verified": 23,
     "needs_review": 0,
     "unavailable": 0,
-    "pending": 383,
+    "pending": 373,
     "groups": [
       {
         "name": "Group 1",
         "total": 45,
-        "verified": 13,
+        "verified": 23,
         "needs_review": 0
       },
       {
@@ -119,29 +119,29 @@
       {
         "name": "Voice recorder",
         "total": 4,
-        "verified": 0,
+        "verified": 1,
         "needs_review": 0
       }
     ],
     "issue_question_ids": [],
-    "current_question": 3568,
-    "current_module": "Group 1",
+    "current_question": null,
+    "current_module": null,
     "module_subtitle": "Operational Procedures",
-    "current_question_ordinal": 23,
-    "eta_seconds": 5234,
-    "eta_description": "Estimated from the latest 13 verified questions; flagged IDs excluded"
+    "current_question_ordinal": null,
+    "eta_seconds": 6070,
+    "eta_description": "Estimated from the latest 23 verified questions; flagged IDs excluded"
   },
   "operational_procedures": {
     "total": 396,
-    "verified": 13,
+    "verified": 23,
     "needs_review": 0,
     "unavailable": 0,
-    "pending": 383,
+    "pending": 373,
     "groups": [
       {
         "name": "Group 1",
         "total": 45,
-        "verified": 13,
+        "verified": 23,
         "needs_review": 0
       },
       {
@@ -249,17 +249,17 @@
       {
         "name": "Voice recorder",
         "total": 4,
-        "verified": 0,
+        "verified": 1,
         "needs_review": 0
       }
     ],
     "issue_question_ids": [],
-    "current_question": 3568,
-    "current_module": "Group 1",
+    "current_question": null,
+    "current_module": null,
     "module_subtitle": "Operational Procedures",
-    "current_question_ordinal": 23,
-    "eta_seconds": 5234,
-    "eta_description": "Estimated from the latest 13 verified questions; flagged IDs excluded"
+    "current_question_ordinal": null,
+    "eta_seconds": 6070,
+    "eta_description": "Estimated from the latest 23 verified questions; flagged IDs excluded"
   },
   "meteorology": {
     "total": 887,
@@ -450,7 +450,7 @@
   },
   "overall": {
     "total": 7375,
-    "verified": 1187
+    "verified": 1197
   },
   "air_law": {
     "total": 292,
@@ -552,9 +552,9 @@
   },
   "collector": {
     "state": "running",
-    "stage": "question_open",
-    "last_activity_utc": "2026-10-19T02:14:26Z",
-    "last_progress_utc": "2026-10-19T02:11:57Z"
+    "stage": "batch_complete",
+    "last_activity_utc": "2026-10-19T02:15:13Z",
+    "last_progress_utc": "2026-10-19T02:15:11Z"
   },
   "subjects": [
     {
@@ -656,11 +656,11 @@
     {
       "name": "Operational Procedures",
       "total": 396,
-      "verified": 13,
+      "verified": 23,
       "needs_review": 0,
       "unavailable": 0,
-      "pending": 383
+      "pending": 373
     }
   ],
-  "published_at": "2026-10-19T02:14:39Z"
+  "published_at": "2026-10-19T02:15:40Z"
 }
