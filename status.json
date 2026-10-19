@@ -3,10 +3,10 @@
   "active_subject": "Operational Procedures",
   "current": {
     "total": 396,
-    "verified": 321,
+    "verified": 331,
     "needs_review": 2,
     "unavailable": 0,
-    "pending": 73,
+    "pending": 63,
     "groups": [
       {
         "name": "Group 1",
@@ -53,7 +53,7 @@
       {
         "name": "Group 8",
         "total": 45,
-        "verified": 23,
+        "verified": 33,
         "needs_review": 1
       },
       {
@@ -127,19 +127,19 @@
       12647,
       114085
     ],
-    "current_question": 12761,
-    "current_module": "Group 8",
+    "current_question": null,
+    "current_module": null,
     "module_subtitle": "Operational Procedures",
-    "current_question_ordinal": 333,
-    "eta_seconds": 1319,
+    "current_question_ordinal": null,
+    "eta_seconds": 1105,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
   "operational_procedures": {
     "total": 396,
-    "verified": 321,
+    "verified": 331,
     "needs_review": 2,
     "unavailable": 0,
-    "pending": 73,
+    "pending": 63,
     "groups": [
       {
         "name": "Group 1",
@@ -186,7 +186,7 @@
       {
         "name": "Group 8",
         "total": 45,
-        "verified": 23,
+        "verified": 33,
         "needs_review": 1
       },
       {
@@ -260,11 +260,11 @@
       12647,
       114085
     ],
-    "current_question": 12761,
-    "current_module": "Group 8",
+    "current_question": null,
+    "current_module": null,
     "module_subtitle": "Operational Procedures",
-    "current_question_ordinal": 333,
-    "eta_seconds": 1319,
+    "current_question_ordinal": null,
+    "eta_seconds": 1105,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
   "meteorology": {
@@ -456,7 +456,7 @@
   },
   "overall": {
     "total": 7375,
-    "verified": 1495
+    "verified": 1505
   },
   "air_law": {
     "total": 292,
@@ -558,9 +558,9 @@
   },
   "collector": {
     "state": "running",
-    "stage": "question_open",
-    "last_activity_utc": "2026-10-19T03:50:00Z",
-    "last_progress_utc": "2026-10-19T03:47:39Z"
+    "stage": "batch_complete",
+    "last_activity_utc": "2026-10-19T03:50:43Z",
+    "last_progress_utc": "2026-10-19T03:50:41Z"
   },
   "subjects": [
     {
@@ -662,11 +662,11 @@
     {
       "name": "Operational Procedures",
       "total": 396,
-      "verified": 321,
+      "verified": 331,
       "needs_review": 2,
       "unavailable": 0,
-      "pending": 73
+      "pending": 63
     }
   ],
-  "published_at": "2026-10-19T03:50:04Z"
+  "published_at": "2026-10-19T03:51:06Z"
 }
