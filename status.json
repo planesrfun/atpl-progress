@@ -364,7 +364,7 @@
     "eta_description": "Waiting for source availability of flagged IDs"
   },
   "overall": {
-    "total": 8027,
+    "total": 7375,
     "verified": 1174
   },
   "air_law": {
@@ -570,12 +570,12 @@
     },
     {
       "name": "OPS",
-      "total": 1048,
+      "total": 396,
       "verified": 0,
       "needs_review": 0,
       "unavailable": 0,
-      "pending": 1048
+      "pending": 396
     }
   ],
-  "published_at": "2026-10-18T23:14:21Z"
+  "published_at": "2026-10-19T02:06:31Z"
 }
