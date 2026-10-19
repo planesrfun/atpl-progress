@@ -126,10 +126,10 @@
     "issue_question_ids": [
       12647
     ],
-    "current_question": null,
-    "current_module": null,
+    "current_question": 4975,
+    "current_module": "Group 5",
     "module_subtitle": "Operational Procedures",
-    "current_question_ordinal": null,
+    "current_question_ordinal": 208,
     "eta_seconds": 3699,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
@@ -258,10 +258,10 @@
     "issue_question_ids": [
       12647
     ],
-    "current_question": null,
-    "current_module": null,
+    "current_question": 4975,
+    "current_module": "Group 5",
     "module_subtitle": "Operational Procedures",
-    "current_question_ordinal": null,
+    "current_question_ordinal": 208,
     "eta_seconds": 3699,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
@@ -556,8 +556,8 @@
   },
   "collector": {
     "state": "running",
-    "stage": "batch_complete",
-    "last_activity_utc": "2026-10-19T03:10:42Z",
+    "stage": "question_open",
+    "last_activity_utc": "2026-10-19T03:12:02Z",
     "last_progress_utc": "2026-10-19T03:10:40Z"
   },
   "subjects": [
@@ -666,5 +666,5 @@
       "pending": 193
     }
   ],
-  "published_at": "2026-10-19T03:11:05Z"
+  "published_at": "2026-10-19T03:12:06Z"
 }
