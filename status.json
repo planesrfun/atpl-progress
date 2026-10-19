@@ -480,7 +480,7 @@
     "state": "review_needed",
     "stage": "finished_or_requires_review",
     "last_activity_utc": "2026-10-18T23:14:12Z",
-    "last_progress_utc": "2026-10-18T23:13:49Z"
+    "last_progress_utc": null
   },
   "overall": {
     "total": 7375,
@@ -696,5 +696,5 @@
       "pending": 0
     }
   ],
-  "published_at": "2026-10-19T17:47:13Z"
+  "published_at": "2026-10-19T23:14:31Z"
 }
