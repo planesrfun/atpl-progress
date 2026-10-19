@@ -3,10 +3,10 @@
   "active_subject": "Operational Procedures",
   "current": {
     "total": 396,
-    "verified": 364,
-    "needs_review": 2,
+    "verified": 370,
+    "needs_review": 3,
     "unavailable": 0,
-    "pending": 30,
+    "pending": 23,
     "groups": [
       {
         "name": "Group 1",
@@ -65,8 +65,8 @@
       {
         "name": "Group 10",
         "total": 14,
-        "verified": 5,
-        "needs_review": 0
+        "verified": 11,
+        "needs_review": 1
       },
       {
         "name": "MEM Numbers",
@@ -101,7 +101,7 @@
       {
         "name": "Fire Exting.",
         "total": 15,
-        "verified": 12,
+        "verified": 15,
         "needs_review": 0
       },
       {
@@ -125,21 +125,22 @@
     ],
     "issue_question_ids": [
       12647,
-      114085
+      114085,
+      19644
     ],
-    "current_question": 3391,
+    "current_question": 11313,
     "current_module": "Group 10",
     "module_subtitle": "Operational Procedures",
-    "current_question_ordinal": 366,
-    "eta_seconds": 524,
+    "current_question_ordinal": 375,
+    "eta_seconds": 402,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
   "operational_procedures": {
     "total": 396,
-    "verified": 364,
-    "needs_review": 2,
+    "verified": 370,
+    "needs_review": 3,
     "unavailable": 0,
-    "pending": 30,
+    "pending": 23,
     "groups": [
       {
         "name": "Group 1",
@@ -198,8 +199,8 @@
       {
         "name": "Group 10",
         "total": 14,
-        "verified": 5,
-        "needs_review": 0
+        "verified": 11,
+        "needs_review": 1
       },
       {
         "name": "MEM Numbers",
@@ -234,7 +235,7 @@
       {
         "name": "Fire Exting.",
         "total": 15,
-        "verified": 12,
+        "verified": 15,
         "needs_review": 0
       },
       {
@@ -258,13 +259,14 @@
     ],
     "issue_question_ids": [
       12647,
-      114085
+      114085,
+      19644
     ],
-    "current_question": 3391,
+    "current_question": 11313,
     "current_module": "Group 10",
     "module_subtitle": "Operational Procedures",
-    "current_question_ordinal": 366,
-    "eta_seconds": 524,
+    "current_question_ordinal": 375,
+    "eta_seconds": 402,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
   "meteorology": {
@@ -456,7 +458,7 @@
   },
   "overall": {
     "total": 7375,
-    "verified": 1538
+    "verified": 1544
   },
   "air_law": {
     "total": 292,
@@ -558,9 +560,9 @@
   },
   "collector": {
     "state": "running",
-    "stage": "verified",
-    "last_activity_utc": "2026-10-19T04:02:22Z",
-    "last_progress_utc": "2026-10-19T04:02:21Z"
+    "stage": "question_open",
+    "last_activity_utc": "2026-10-19T04:03:18Z",
+    "last_progress_utc": "2026-10-19T04:02:38Z"
   },
   "subjects": [
     {
@@ -662,11 +664,11 @@
     {
       "name": "Operational Procedures",
       "total": 396,
-      "verified": 364,
-      "needs_review": 2,
+      "verified": 370,
+      "needs_review": 3,
       "unavailable": 0,
-      "pending": 30
+      "pending": 23
     }
   ],
-  "published_at": "2026-10-19T04:02:23Z"
+  "published_at": "2026-10-19T04:03:24Z"
 }
