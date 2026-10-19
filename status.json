@@ -3,10 +3,10 @@
   "active_subject": "Operational Procedures",
   "current": {
     "total": 396,
-    "verified": 127,
+    "verified": 132,
     "needs_review": 1,
     "unavailable": 0,
-    "pending": 268,
+    "pending": 263,
     "groups": [
       {
         "name": "Group 1",
@@ -29,7 +29,7 @@
       {
         "name": "Group 4",
         "total": 41,
-        "verified": 1,
+        "verified": 6,
         "needs_review": 0
       },
       {
@@ -59,7 +59,7 @@
       {
         "name": "Group 9",
         "total": 38,
-        "verified": 8,
+        "verified": 13,
         "needs_review": 1
       },
       {
@@ -126,19 +126,19 @@
     "issue_question_ids": [
       12647
     ],
-    "current_question": 393,
-    "current_module": "Group 3",
+    "current_question": 1752,
+    "current_module": "Group 4",
     "module_subtitle": "Operational Procedures",
-    "current_question_ordinal": 127,
-    "eta_seconds": 4994,
+    "current_question_ordinal": 134,
+    "eta_seconds": 4901,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
   "operational_procedures": {
     "total": 396,
-    "verified": 127,
+    "verified": 132,
     "needs_review": 1,
     "unavailable": 0,
-    "pending": 268,
+    "pending": 263,
     "groups": [
       {
         "name": "Group 1",
@@ -161,7 +161,7 @@
       {
         "name": "Group 4",
         "total": 41,
-        "verified": 1,
+        "verified": 6,
         "needs_review": 0
       },
       {
@@ -191,7 +191,7 @@
       {
         "name": "Group 9",
         "total": 38,
-        "verified": 8,
+        "verified": 13,
         "needs_review": 1
       },
       {
@@ -258,11 +258,11 @@
     "issue_question_ids": [
       12647
     ],
-    "current_question": 393,
-    "current_module": "Group 3",
+    "current_question": 1752,
+    "current_module": "Group 4",
     "module_subtitle": "Operational Procedures",
-    "current_question_ordinal": 127,
-    "eta_seconds": 4994,
+    "current_question_ordinal": 134,
+    "eta_seconds": 4901,
     "eta_description": "Estimated from the latest 31 verified questions; flagged IDs excluded"
   },
   "meteorology": {
@@ -454,7 +454,7 @@
   },
   "overall": {
     "total": 7375,
-    "verified": 1301
+    "verified": 1306
   },
   "air_law": {
     "total": 292,
@@ -556,9 +556,9 @@
   },
   "collector": {
     "state": "running",
-    "stage": "verified",
-    "last_activity_utc": "2026-10-19T02:48:29Z",
-    "last_progress_utc": "2026-10-19T02:48:30Z"
+    "stage": "question_open",
+    "last_activity_utc": "2026-10-19T02:49:19Z",
+    "last_progress_utc": "2026-10-19T02:48:45Z"
   },
   "subjects": [
     {
@@ -660,11 +660,11 @@
     {
       "name": "Operational Procedures",
       "total": 396,
-      "verified": 127,
+      "verified": 132,
       "needs_review": 1,
       "unavailable": 0,
-      "pending": 268
+      "pending": 263
     }
   ],
-  "published_at": "2026-10-19T02:48:31Z"
+  "published_at": "2026-10-19T02:49:32Z"
 }
