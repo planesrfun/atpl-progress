@@ -588,7 +588,7 @@
     "state": "review_needed",
     "stage": "finished_or_requires_review",
     "last_activity_utc": "2026-10-19T04:06:59Z",
-    "last_progress_utc": "2026-10-19T04:05:33Z"
+    "last_progress_utc": null
   },
   "subjects": [
     {
@@ -696,5 +696,5 @@
       "pending": 0
     }
   ],
-  "published_at": "2026-10-19T23:14:31Z"
+  "published_at": "2026-10-20T04:05:47Z"
 }
