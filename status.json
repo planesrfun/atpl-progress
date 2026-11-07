@@ -8,8 +8,8 @@
     "no_figure": 882,
     "errors": 0,
     "unserved": 0,
-    "stage": "complete",
-    "updated_utc": "2026-11-07T07:43:09+00:00"
+    "stage": "finalized",
+    "updated_utc": "2026-11-07T07:44:20.287512+00:00"
   },
   "active_subject": "Operational Procedures",
   "current": {
@@ -707,5 +707,5 @@
       "pending": 0
     }
   ],
-  "published_at": "2026-11-07T07:43:20Z"
+  "published_at": "2026-11-07T07:44:20Z"
 }
