@@ -110,6 +110,15 @@
         <div class="eta-hint" id="eta-hint">Based on the latest verified collection rate</div>
       </div>
     </section>
+    <section class="card section" id="met-annex-restoration" style="margin-bottom:18px;display:none" aria-label="Meteorology source image restoration">
+      <div class="section-head">
+        <div><h2>Meteorology · source-image restoration</h2><div class="section-subtitle">Checking every stored MET question against its original ATPL Online annex</div></div>
+        <span class="pill" id="met-figure-status">Auditing</span>
+      </div>
+      <div class="module-top"><strong id="met-figure-count">— / 885 questions checked</strong><span id="met-figure-percent" class="count">—%</span></div>
+      <div class="track" style="height:9px;margin:12px 0 15px"><i id="met-figure-bar" style="width:0%"></i></div>
+      <div class="progress-meta"><span id="met-figure-images">No figures captured yet</span><span id="met-figure-errors">No errors</span></div>
+    </section>
     <div class="stats">
       <section class="card stat"><div class="overline">Current module</div><div class="value small" id="module">—</div><div class="secondary" id="module-sub">Awaiting live data</div></section>
       <section class="card stat"><div class="overline">Current question</div><div class="value" id="current-question">—</div><div class="secondary" id="question-sub">Awaiting live data</div></section>
@@ -154,6 +163,18 @@
     el('subject-heading').textContent='Question bank / '+activeName;
     el('verified-label').textContent=activeName+' verified questions';
     el('current-subject').textContent=activeName;
+    const fig=d.meteorology_annex_restoration;
+    el('met-annex-restoration').style.display=fig?'block':'none';
+    if(fig){
+      const percentDone=percent(fig.scanned,fig.total);
+      el('met-figure-count').textContent=count(fig.scanned)+' / '+count(fig.total)+' questions checked';
+      el('met-figure-percent').textContent=percentDone+'%';
+      el('met-figure-bar').style.width=percentDone+'%';
+      el('met-figure-images').textContent=count(fig.source_images)+' original figure(s) recovered from '+count(fig.questions_with_figures)+' question(s)';
+      el('met-figure-errors').textContent=fig.errors||fig.unserved?count(fig.errors)+' capture errors · '+count(fig.unserved)+' unavailable':'No capture errors';
+      const label=fig.stage==='complete'?'Capture complete':fig.stage==='blocked'?'Attention needed':fig.stage==='finalized'?'PDF published':'Audit running';
+      el('met-figure-status').textContent=label;
+    }
     const a=d.current||d.meteorology||d.air_law||{}, total=a.total||887, verified=a.verified||0, review=a.needs_review||0, pending=a.pending||0;
     const percentage=percent(verified,total);
     el('done').textContent=count(verified);
