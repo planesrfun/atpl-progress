@@ -1,15 +1,15 @@
 {
   "schema_version": 4,
   "meteorology_annex_restoration": {
-    "scanned": 865,
+    "scanned": 878,
     "total": 885,
-    "questions_with_figures": 0,
-    "source_images": 0,
-    "no_figure": 865,
+    "questions_with_figures": 2,
+    "source_images": 2,
+    "no_figure": 876,
     "errors": 0,
     "unserved": 0,
     "stage": "scanning",
-    "updated_utc": "2026-11-07T07:41:14+00:00"
+    "updated_utc": "2026-11-07T07:42:16+00:00"
   },
   "active_subject": "Operational Procedures",
   "current": {
@@ -707,5 +707,5 @@
       "pending": 0
     }
   ],
-  "published_at": "2026-11-07T07:41:17Z"
+  "published_at": "2026-11-07T07:42:18Z"
 }
